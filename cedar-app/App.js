@@ -1,32 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { userLogin } from './store/actions';
-import store from './store/store'
+import MapContainer from './components/maps'
 
 export default function App() {
   let x = 1;
   
-  const unsubscribe = store.subscribe(() => {
-    console.log("store changed!", store.getState());
-  })
+  //const unsubscribe = store.subscribe(() => {
+  //  console.log("store changed!", store.getState());
+  //})
 
-  userLogin("user1", "pass", "sdfsdfsdf");
-  unsubscribe();
+  //userLogin("user1", "pass", "sdfsdfsdf");
+  //unsubscribe();
 
   return (
-    <View style={styles.container}>
-      <Text>Cedar App !!!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <MapContainer />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
